@@ -16,7 +16,7 @@ public class ValidateISBN {
 				currentDigit = Integer.parseInt(Character.toString(isbn.charAt(i)));				
 			}
 			catch (Exception e) {
-				//throw new NumberFormatException();
+				throw new NumberFormatException();
 				// TODO: handle exception
 			}
 			
