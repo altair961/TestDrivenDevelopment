@@ -11,14 +11,7 @@ public class ValidateISBN {
 		
 		for (int i = 0; i < 10; i++) 
 		{
-			int currentDigit = 0;
-			try {
-				currentDigit = Integer.parseInt(Character.toString(isbn.charAt(i)));				
-			}
-			catch (Exception e) {
-				throw new NumberFormatException();
-				// TODO: handle exception
-			}
+			if(!Character.isDigit(isbn.charAt(i))) throw new NumberFormatException("ISBN numbers can only contain numeric digits");
 			
 			total += isbn.charAt(i) * (10 - i);
 		}

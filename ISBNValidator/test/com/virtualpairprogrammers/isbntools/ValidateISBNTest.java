@@ -30,7 +30,7 @@ public class ValidateISBNTest {
 	}
 	
 	@Test(expected = NumberFormatException.class)
-	public void nonDigitStringISBNAreNotAllowed() {
+	public void nonNumericISBNsAreNotAllowed() {
 		ValidateISBN validator = new ValidateISBN();
 		validator.checkISBN("helloworld");
 	}
