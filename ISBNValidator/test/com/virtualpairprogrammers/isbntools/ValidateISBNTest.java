@@ -15,12 +15,23 @@ public class ValidateISBNTest {
 		assertTrue("second value", result);
 	}
 	
-	
 	@Test
 	public void checkAnInvalidISBN() {
 		ValidateISBN validator = new ValidateISBN();
 		boolean result = validator.checkISBN("0140449117");
 		
 		assertFalse(result);
+	}
+	
+	@Test(expected = NumberFormatException.class)
+	public void nineDigitISBNsAreNotAllowed() {
+		ValidateISBN validator = new ValidateISBN();
+		validator.checkISBN("123456789");
+	}
+	
+	@Test(expected = NumberFormatException.class)
+	public void nonDigitStringISBNAreNotAllowed() {
+		ValidateISBN validator = new ValidateISBN();
+		validator.checkISBN("helloworld");
 	}
 }
