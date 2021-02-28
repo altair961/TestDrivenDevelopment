@@ -1,14 +1,16 @@
 package com.virtualpairprogrammers.isbntools;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class ValidateISBNTest {
+public class ValidateISBNTest {
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	public void checkValidISBN() {
+		ValidateISBN validator = new ValidateISBN();
+		boolean result = validator.checkISBN(140449116);
+		
+		assertTrue(result);
 	}
-
 }
